@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,9 +20,9 @@ session_start();
       <img onClick="window.location.href='index.php'" class="logoImg" src="img/logoLaBaskW.png" alt="logo"/>
     </header>
     <section class="formSection">
-      <form class="form" action="dbConnection/processo.php" method="POST">
-        
-        <h1>Cadastro de camiseta</h1>
+
+      <form id="form"  action="dbConnection/processo.php" method="POST">
+        <h1>Cadastro de camiseta</h1> 
         <label for="productCode">Registre o código produto:</label>
         <input type="text" name="codProduto" id="productCode" required />
         <label for="name">Digite o nome do produto:</label>
@@ -38,10 +39,15 @@ session_start();
         <input type="number" name="estoque" id="stock" min="0" value="0" />
         <label for="price">Preço de venda:</label>
         <input type="text" name="preco" id="price" required />
+        <label for="id_img">Id Img no Banco</label>
+        <input type="number" name="id_img" id="id_img" min="0" value="0" required />
+        <label for="PgVenda">Pg Venda:</label>
+        <input type="text" name="PgVenda" id="PgVenda"required />
         <div class="formBtnContainer">
           <button class="formBtn" type="submit">Cadastrar</button>
           <button class="formBtn" type="reset">Apagar</button>
         </div>
+
         <div class="registerInfomation-p">
           <?php
             if(isset($_SESSION['msg'])){
@@ -51,6 +57,7 @@ session_start();
           ?>
         </div>
       </form>
+      
     </section>
     <footer class="footer"></footer>
   </body>

@@ -19,7 +19,7 @@
         src="img/logoLaBask.png"
         alt="logo"
         />
-        <button onClick="window.location.href='prodRegister.php'" class="navBtn">Cadastrar</button>
+        <button onClick="window.location.href='prodImg.php'" class="navBtn">Cadastrar</button>
       </nav>
     </header>
     <main id="main">

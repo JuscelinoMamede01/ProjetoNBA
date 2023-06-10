@@ -14,120 +14,44 @@
       <nav id="navBar">
         <a href="produtos.php">Camisetas</a>
         <img onClick="window.location.href='index.php'" class="logoImg" src="img/logoLaBask.png" alt="logo"/>
-        <button onClick="window.location.href='prodRegister.php'" class="navBtn"> Cadastrar</button>
+        <button onClick="window.location.href='prodImg.php'" class="navBtn"> Cadastrar</button>
       </nav>
     </header>
     <main id="main">
-      <section class="product-grid">
-        <div class="product">
-          <img class="jerseyImgBox" src="img/boston (1).png" alt="boston-jersey1"/>
-          <p class="productTitle">Camiseta NBA Boston Celtics</p>
-          <p class="stars">⭐⭐⭐⭐★</p>
-          <p class="currency">R$ <span class="price">199,99</span></p>
-          <button onClick="window.location.href='productPages/bostonPage.php'" class="productBtn">
-            Ver mais
-          </button>
-        </div>
-        <div class="product">
-          <img class="jerseyImgBox" src="img/bucks.png" alt="bucks-Jersey1" />
-          <p class="productTitle">Camiseta NBA Milwaukee Bucks</p>
-          <p class="stars">⭐⭐⭐⭐★</p>
-          <p class="currency">R$ <span class="price">199,99</span></p>
-          <button onClick="window.location.href='productPages/bucksPage.php'" class="productBtn">
-            Ver mais
-          </button>
-        </div>
-        <div class="product">
-          <img class="jerseyImgBox" src="img/bullsJordan (2).png" alt="bulls-Jersey1" />
-          <p class="productTitle">Camiseta NBA Bulls Jordan</p>
-          <p class="stars">⭐⭐⭐⭐⭐</p>
-          <p class="currency">R$ <span class="price">199,99</span></p>
-          <button onClick="window.location.href='productPages/bullsPage.php'" class="productBtn">
-            Ver mais
-          </button>
-        </div>
-        <div class="product">
-          <img class="jerseyImgBox" src="img/clippers (2).png" alt="clippers-Jersey1"/>
-          <p class="productTitle">Camiseta NBA LA Clippers</p>
-          <p class="stars">⭐⭐⭐★★</p>
-          <p class="currency">R$ <span class="price">199,99</span></p>
-          <button onClick="window.location.href='productPages/clippersPage.php'" class="productBtn">
-            Ver mais
-          </button>
-        </div>
-        <div class="product">
-          <img class="jerseyImgBox" src="img/dallas (2).png" alt="dallas-Jersey1" />
-          <p class="productTitle">Camiseta NBA Dallas Mavericks</p>
-          <p class="stars">⭐⭐⭐⭐★</p>
-          <p class="currency">R$ <span class="price">199,99</span></p>
-          <button onClick="window.location.href='#'" class="productBtn">
-            Ver mais
-          </button>
-        </div>
-        <div class="product">
-          <img class="jerseyImgBox" src="img/lakers (2).png" alt="lakers-jersey1"/>
-          <p class="productTitle">Camiseta NBA LA Lakers</p>
-          <p class="stars">⭐⭐⭐⭐★</p>
-          <p class="currency">R$ <span class="price">199,99</span></p>
-          <button onClick="window.location.href='#'" class="productBtn">
-            Ver mais
-          </button>
-        </div>
-        <div class="product">
-          <img class="jerseyImgBox" src="img/Miami-black.png" alt="miami-jersey1" />
-          <p class="productTitle">Camiseta NBA Miami Heat</p>
-          <p class="stars">⭐⭐⭐★★</p>
-          <p class="currency">R$ <span class="price">199,99</span></p>
-          <button onClick="window.location.href='#'" class="productBtn">
-            Ver mais
-          </button>
-        </div>
-        <div class="product">
-          <img class="jerseyImgBox" src="img/warriors (1).png" alt="black-Miami-Jersey1" />
-          <p class="productTitle">Camiseta NBA Warriors</p>
-          <p class="stars">⭐⭐⭐⭐★</p>
-          <p class="currency">R$ <span class="price">199,99</span></p>
-          <button onClick="window.location.href='#'" class="productBtn">
-            Ver mais
-          </button>
-        </div>
-        <div class="product">
-          <img class="jerseyImgBox" src="img/usa (1).png" alt="Amercian-Jersey1" />
-          <p class="productTitle">Camiseta USA Basketball</p>
-          <p class="stars">⭐⭐⭐⭐★</p>
-          <p class="currency">R$ <span class="price">199,99</span></p>
-          <button onClick="window.location.href='#'" class="productBtn">
-            Ver mais
-          </button>
-        </div>
-        <div class="product">
-          <img class="jerseyImgBox" src="img//nuggets (1).png" alt="nuggets-Jersey1"/>
-          <p class="productTitle">Camiseta NBA Denver Nuggets</p>
-          <p class="stars">⭐⭐⭐⭐★</p>
-          <p class="currency">R$ <span class="price">199,99</span></p>
-          <button onClick="window.location.href='#'" class="productBtn">
-            Ver mais
-          </button>
-        </div>
-        <div class="product">
-          <img class="jerseyImgBox" src="img/utah (2).png" alt="utah-Jersey1"/>
-          <p class="productTitle">Camiseta NBA Utah Jazz</p>
-          <p class="stars">⭐⭐⭐⭐★</p>
-          <p class="currency">R$ <span class="price">199,99</span></p>
-          <button onClick="window.location.href='#'" class="productBtn">
-            Ver mais
-          </button>
-        </div>
-        <div class="product">
-          <img class="jerseyImgBox" src="img/rockets (2).png" alt="rockets-Jersey1" />
-          <p class="productTitle">Camiseta NBA Houston Rockets</p>
-          <p class="stars">⭐⭐⭐⭐★</p>
-          <p class="currency">R$ <span class="price">199,99</span></p>
-          <button onClick="window.location.href='#'" class="productBtn">
-            Ver mais
-          </button>
-        </div>
-      </section>
+    <?php
+      session_start();
+      include_once("dbConnection/conexao.php");
+
+      // Consulta para recuperar os produtos cadastrados
+      $query = "SELECT * FROM cadastroproduto";
+      $result = mysqli_query($conn, $query);
+
+      // Verifica se a consulta retornou algum resultado
+      if (mysqli_num_rows($result) > 0) {
+          while ($row = mysqli_fetch_assoc($result)) {
+              // Recupera a imagem correspondente ao id_img
+              $imagemQuery = "SELECT * FROM imagem WHERE id_img = " . $row['id_img'];
+              $imagemResult = mysqli_query($conn, $imagemQuery);
+              if ($imagemResult && mysqli_num_rows($imagemResult) > 0) {
+                  $imagemRow = mysqli_fetch_assoc($imagemResult);
+                  
+                  echo '<div class="product">';
+                  echo '<img class="jerseyImgBox" src="caminho_completo/' . $imagemRow['path'] . '" alt="boston-jersey1"/>';
+                  echo '<p class="productTitle">' . $row['nome'] . '</p>';
+                  echo '<p class="stars">⭐⭐⭐⭐★</p>';
+                  echo '<p class="currency">R$ <span class="price">' . $row['preco'] . '</span></p>';
+                  echo '<button onClick="window.location.href=\'' . $row['PgVenda'] . '\'" class="productBtn">';
+                  echo 'Ver mais';
+                  echo '</button>';
+                  echo '</div>';
+              } else {
+                  echo "Nenhuma imagem encontrada para o produto.";
+              }
+          }
+      } else {
+          echo "Nenhum produto cadastrado.";
+      }
+    ?>    
     </main>
     <footer id="footer">
       <section class="footerColumns">

@@ -72,44 +72,8 @@ body {
 #main {
   height: 100vh;
   display: flex;
-}
-
-.productImg {
-  width: 50%;
-  height: 100vh;
-  display: flex;
-  justify-content: start;
-  align-items: flex-start;
-  margin: 0;
-}
-
-.prodImgList {
-  list-style-type: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: start;
-  margin: 0;
-}
-
-.prodImgList li {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  margin: 0;
-}
-
-.prodImgList li img {
-  width: 75%;
-  height: 15vh;
-}
-
-#mainImg {
-  width: 80%;
-  height: 100vh;
-  position: relative;
-  top: -50px;
+  justify-content: center;
 }
 
 .sales-section {
@@ -117,8 +81,13 @@ body {
   height: 100vh;
 }
 
-
-
+.final {
+  display: flex;
+  color: #4d4d4d;
+  font-family: "Montserrat", sans-serif;
+  align-items: center;
+  justify-content: center;
+}
 .productinfo {
   list-style-type: none;
   font-family: "Montserrat", sans-serif;

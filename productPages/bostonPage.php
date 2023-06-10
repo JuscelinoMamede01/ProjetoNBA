@@ -14,7 +14,7 @@
       <nav id="navBar">
         <a href="../produtos.php">Camisetas</a>
         <img onClick="window.location.href='../index.php'" class="logoImg" src="../img/logoLaBask.png" alt="logo"/>
-        <button onClick="window.location.href='../prodRegister.php'" class="navBtn">
+        <button onClick="window.location.href='../prodImg.php'" class="navBtn">
           Cadastrar
         </button>
       </nav>
@@ -44,7 +44,13 @@
           <p>Escolha a <span>COR</span> :</p>
           <input type="color" id="color" name="color" value="#FFFFFF" disabled/>
           <input type="radio" name="white" id="white" />
-          <label for="white">Branco</label>
+          <label for="white">Branco</label><br>
+          <div class="btnQtd">
+            <label for="contador">Quantidade:</label><br>
+            <button type="button" id="btnDiminuir">-</button>
+            <input type="number" id="contador" value="1" readonly>
+            <button type="button" id="btnAumentar">+</button>
+          </div>
           <p>Escolha o <span>TAMANHO</span> :</p>
           <input type="radio" name="sizebtn" id="P" />
           <label for="P">P</label>
@@ -56,7 +62,7 @@
           <label for="GG">GG</label>
           <input type="radio" name="sizebtn" id="XGG" />
           <label for="XGG">XGG</label>
-          <button onClick="window.location.href='prodRegister.php'" class="prodBtn">
+          <button onClick="window.location.href='carrinho.php'" class="prodBtn">
             COMPRAR
           </button><br />
           <label for="cep">Digite seu CEP:</label><br />

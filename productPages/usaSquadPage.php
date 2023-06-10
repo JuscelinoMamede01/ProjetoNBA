@@ -14,7 +14,7 @@
       <nav id="navBar">
         <a href="../produtos.php">Camisetas</a>
         <img onClick="window.location.href='../index.php'" class="logoImg" src="../img/logoLaBask.png" alt="logo"/>
-        <button onClick="window.location.href='../prodImg.php'"class="navBtn">
+        <button onClick="window.location.href='../prodImg.php'" class="navBtn">
           Cadastrar
         </button>
       </nav>
@@ -23,29 +23,28 @@
       <section class="productImg">
         <ul class="prodImgList">
           <li>
-            <img src="../img/bullsJordan (2).png " alt="bullsimg" onclick="changeImg('../img/bullsJordan (2).png ');"
-            />
+            <img src="../img/clippers (2).png" alt="bostonImg1" onclick="changeImg('../img/clippers (2).png');"/>
           </li>
           <li>
-            <img src="../img/bullsJordan (1).png " alt="bullsimg" onclick="changeImg('../img/bullsJordan (1).png ');" />
+            <img src="../img/clippers (1).png" alt="bostonImg1" onclick="changeImg('../img/clippers (1).png');"/>
           </li>
           <li>
-            <img src="../img/bullsJordan (3).png " alt="bullsimg" onclick="changeImg('../img/bullsJordan (3).png ');" />
+            <img src="../img/clippers (3).png" alt="bostonImg1" onclick="changeImg('../img/clippers (3).png');" />
           </li>
           <li>
             <img src="../img/TAMimg.png" alt="bostonImg1" onclick="changeImg('../img/TAMimg.png');"/>
           </li>
         </ul>
-        <img src="../img/bullsJordan (2).png " alt="mainImg" id="mainImg" />
+        <img src="../img/clippers (2).png" alt="mainImg" id="mainImg" />
       </section>
       <section class="sales-section">
         <form action="" method="POST" class="productinfo">
-          <h2>Camiseta NBA Bulls Jordan</h2>
-          <p>Cod: LA002</p>
+          <h2>Camiseta NBA Los Angeles Clippers</h2>
+          <p>Cod: LA001</p>
           <p>Escolha a <span>COR</span> :</p>
-          <input type="color" id="color" name="color" value="#FFFFFF" disabled />
+          <input type="color" id="color" name="color" value="#146c9c" disabled/>
           <input type="radio" name="white" id="white" />
-          <label for="white">Branco</label>
+          <label for="white">Azul Claro</label>
           <div class="btnQtd">
             <label for="contador">Quantidade:</label><br>
             <button type="button" id="btnDiminuir">-</button>
@@ -63,7 +62,7 @@
           <label for="GG">GG</label>
           <input type="radio" name="sizebtn" id="XGG" />
           <label for="XGG">XGG</label>
-          <button onClick="window.location.href='carrinho.php'" class="prodBtn">
+          <button onClick="window.location.href='prodRegister.php'" class="prodBtn">
             COMPRAR
           </button><br />
           <label for="cep">Digite seu CEP:</label><br />
@@ -74,7 +73,7 @@
       <section class="prod-description">
         <h2>INFORMAÇÕES</h2>
         <hr />
-        <h4>DESCRIÇÃO</h4>
+        <h4>DESCRICAO</h4>
         <ul class="descripitionList">
           <li>Modelo: Masculino</li>
           <li>

@@ -58,16 +58,85 @@ body {
 }
 
 .formSection {
-  height: 150vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+.formImg {
+  width: 40%;
+  height: 50vh;
+  border-radius: 50px;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 244, 224, 0.3);
+  box-shadow: 0px 0px 2.7px rgba(0, 0, 0, 0.19),
+    0px 0px 6.9px rgba(0, 0, 0, 0.131), 0px 0px 14.2px rgba(0, 0, 0, 0.106),
+    0px 0px 29.2px rgba(0, 0, 0, 0.084), 0px 0px 80px rgba(0, 0, 0, 0.059);
+}
+
+.formImg h1 {
+  margin: 25px auto;
+}
+
+.fieldset {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+
+#imgfile {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.formImg label {
+  cursor: pointer;
+}
+
+.formImg input {
+  width: 100%;
+  height: 10vh;
+  padding: 10px;
+  display: flex;
+  align-items: flex-end;
+  font-family: "Montserrat", sans-serif;
+}
+
+.formImg input[type="file"]::-webkit-file-upload-button {
+  padding: 9px 25px;
+  background-color: #fc4f00;
+  color: #fff4e0;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  margin: 15px auto;
+  width: 70%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+
 #form {
   width: 40%;
-  height: 90vh;
-  border-radius: 50px;
+  height: 70vh;
+  border-radius: 0px 0px 50px 50px;
   font-family: "Montserrat", sans-serif;
   display: flex;
   flex-direction: column;
@@ -77,11 +146,6 @@ body {
     0px 0px 6.9px rgba(0, 0, 0, 0.131), 0px 0px 14.2px rgba(0, 0, 0, 0.106),
     0px 0px 29.2px rgba(0, 0, 0, 0.084), 0px 0px 80px rgba(0, 0, 0, 0.059);
   padding: 20px;
-}
-
-#form h1 {
-  text-align: center;
-  margin-bottom: 25px;
 }
 
 #form label,
@@ -97,12 +161,12 @@ input {
 
 #size,
 #stock,
-#price,
-#id_img {
+#price {
   width: 25%;
 }
 
 .formBtnContainer {
+  width: 100%;
   display: flex;
   justify-content: center;
 }

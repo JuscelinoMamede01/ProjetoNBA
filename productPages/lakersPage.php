@@ -5,7 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
     <link rel="stylesheet" href="products.css" />
     <title>La Basketeira</title>
   </head>
@@ -13,8 +16,13 @@
     <header id="header">
       <nav id="navBar">
         <a href="../produtos.php">Camisetas</a>
-        <img onClick="window.location.href='../index.php'" class="logoImg" src="../img/logoLaBask.png" alt="logo"/>
-        <button onClick="window.location.href='../prodImg.php'"class="navBtn">
+        <img
+          onClick="window.location.href='../index.php'"
+          class="logoImg"
+          src="../img/logoLaBask.png"
+          alt="logo"
+        />
+        <button onClick="window.location.href='../prodImg.php'" class="navBtn">
           Cadastrar
         </button>
       </nav>
@@ -23,49 +31,100 @@
       <section class="productImg">
         <ul class="prodImgList">
           <li>
-            <img src="../img/bullsJordan (2).png " alt="bullsimg" onclick="changeImg('../img/bullsJordan (2).png ');"
+            <img
+              src="../img/lakers (2).png"
+              alt="bostonImg1"
+              onclick="changeImg('../img/lakers (2).png');"
             />
           </li>
           <li>
-            <img src="../img/bullsJordan (1).png " alt="bullsimg" onclick="changeImg('../img/bullsJordan (1).png ');" />
+            <img
+              src="../img/lakers (1).png"
+              alt="bostonImg1"
+              onclick="changeImg('../img/lakers (1).png');"
+            />
           </li>
           <li>
-            <img src="../img/bullsJordan (3).png " alt="bullsimg" onclick="changeImg('../img/bullsJordan (3).png ');" />
+            <img
+              src="../img/lakersRoxa (1).png"
+              alt="bostonImg1"
+              onclick="changeImg('../img/lakersRoxa (1).png');"
+            />
+          </li>
+
+          <li>
+            <img
+              src="../img/lakersRoxa (2).png"
+              alt="bostonImg1"
+              onclick="changeImg('../img/lakersRoxa (2).png');"
+            />
           </li>
           <li>
-            <img src="../img/TAMimg.png" alt="bostonImg1" onclick="changeImg('../img/TAMimg.png');"/>
+            <img
+              src="../img/lakers (3).png"
+              alt="bostonImg1"
+              onclick="changeImg('../img/lakers (3).png');"
+            />
+          </li>
+          <li>
+            <img
+              src="../img/TAMimg.png"
+              alt="bostonImg1"
+              onclick="changeImg('../img/TAMimg.png');"
+            />
           </li>
         </ul>
-        <img src="../img/bullsJordan (2).png " alt="mainImg" id="mainImg" />
+        <img src="../img/lakers (2).png" alt="mainImg" id="mainImg" />
       </section>
       <section class="sales-section">
-        <form action="" method="POST" class="productinfo">
-          <h2>Camiseta NBA Bulls Jordan</h2>
-          <p>Cod: LA002</p>
+      
+        <form
+          action="../DbConnection/processoCarrinho.php"
+          method="POST"
+          class="productinfo"
+          onsubmit="updateCodProdValue()"
+        >
+        <input type="hidden" name="productname" value="Camiseta NBA Los Angeles Lakers">
+        <input type="hidden" name="codProd" id="codProdValue">
+        <h2>Camiseta NBA Los Angeles Lakers</h2>
+        <p id="codProd">Cod: LA006</p>
           <p>Escolha a <span>COR</span> :</p>
-          <input type="color" id="color" name="color" value="#FFFFFF" disabled />
-          <input type="radio" name="white" id="white" />
-          <label for="white">Branco</label>
+          <input
+            type="color"
+            id="color"
+            name="amarelo"
+            value="#F3C200"
+            disabled
+          />
+          <input type="radio" name="color" id="amarelo" value="amarelo"/>
+          <label for="amarelo">Amarelo</label>
+          <input type="color" id="color" name="azul" value="#160084" disabled />
+          <input type="radio" name="color" id="azul" value="azul"/>
+          <label for="azul">Azul</label>
           <div class="btnQtd">
-            <label for="contador">Quantidade:</label><br>
+            <label for="contador">Quantidade:</label><br />
             <button type="button" id="btnDiminuir">-</button>
-            <input type="number" id="contador" value="1" readonly>
+            <input
+              type="number"
+              id="contador"
+              name="quantidade"
+              value="1"
+              readonly
+            />
             <button type="button" id="btnAumentar">+</button>
           </div>
           <p>Escolha o <span>TAMANHO</span> :</p>
-          <input type="radio" name="sizebtn" id="P" />
+          <input type="radio" name="sizebtn" id="P" value="P" />
           <label for="P">P</label>
-          <input type="radio" name="sizebtn" id="M" />
+          <input type="radio" name="sizebtn" id="M" value="M" />
           <label for="M">M</label>
-          <input type="radio" name="sizebtn" id="G" />
+          <input type="radio" name="sizebtn" id="G" value="G" />
           <label for="G">G</label>
-          <input type="radio" name="sizebtn" id="GG" />
+          <input type="radio" name="sizebtn" id="GG" value="GG" />
           <label for="GG">GG</label>
-          <input type="radio" name="sizebtn" id="XGG" />
+          <input type="radio" name="sizebtn" id="XGG" value="XGG" />
           <label for="XGG">XGG</label>
-          <button onClick="window.location.href='carrinho.php'" class="prodBtn">
-            COMPRAR
-          </button><br />
+          <button type="submit" class="prodBtn">Add no carrinho</button><br />
           <label for="cep">Digite seu CEP:</label><br />
           <input type="text" class="cepBar" />
           <button class="navBtn">Calcular</button>
@@ -74,7 +133,7 @@
       <section class="prod-description">
         <h2>INFORMAÇÕES</h2>
         <hr />
-        <h4>DESCRIÇÃO</h4>
+        <h4>DESCRICAO</h4>
         <ul class="descripitionList">
           <li>Modelo: Masculino</li>
           <li>
@@ -118,7 +177,10 @@
             <a href="https://www.instagram.com/nba/" target="_blank">
               <i class="fab fa-instagram"></i>
             </a>
-            <a href="https://www.youtube.com/channel/UCWJ2lWNubArHWmf3FIHbfcQ" target="_blank">
+            <a
+              href="https://www.youtube.com/channel/UCWJ2lWNubArHWmf3FIHbfcQ"
+              target="_blank"
+            >
               <i class="fab fa-youtube"></i>
             </a>
           </section>
