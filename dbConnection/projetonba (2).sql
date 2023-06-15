@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 10-Jun-2023 às 20:57
+-- Tempo de geração: 15-Jun-2023 às 15:55
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.1.12
 
@@ -44,13 +44,15 @@ CREATE TABLE `cadastroproduto` (
 --
 
 INSERT INTO `cadastroproduto` (`id`, `codProduto`, `nome`, `tamanho`, `estoque`, `preco`, `created`, `id_img`, `PgVenda`) VALUES
-(13, 'LA001', 'Camiseta NBA Denver Nuggets', 'P', 3, '199.99', '2023-06-08 20:39:10', 10, 'productPages/bostonPage.php'),
+(13, 'LA001', 'Camiseta NBA Boston Celtics', 'P', 3, '199.99', '2023-06-08 20:39:10', 10, 'productPages/bostonPage.php'),
 (14, 'LA002', 'Camiseta NBA Bulls Jordan', 'P', 4, '199.99', '2023-06-08 20:42:26', 11, 'productPages/bullsPage.php'),
 (15, 'LA003', 'Camiseta NBA Los Angeles Clippers', 'P', 10, '199.99', '2023-06-10 11:42:44', 12, 'productPages/clippersPage.php'),
 (16, 'LA004', 'Camiseta NBA Milwaukee Bucks', 'P', 10, '199.99', '2023-06-10 11:46:50', 13, 'productPages/bucksPage.php'),
 (17, 'LA005', 'Camiseta NBA Miami Heat', 'P', 10, '199.99', '2023-06-10 11:50:46', 14, 'productPages/miamiHeatPage.php'),
 (18, 'LA006', 'Camiseta NBA Los Angeles Lakers', 'P', 10, '199.99', '2023-06-10 11:57:37', 15, 'productPages/lakersPage.php'),
-(19, 'LA007', 'Camiseta NBA Golden State Warriors', 'P', 10, '199.99', '2023-06-10 12:04:51', 16, 'productPages/warriorsPage.php');
+(19, 'LA007', 'Camiseta NBA Golden State Warriors', 'P', 10, '199.99', '2023-06-10 12:04:51', 16, 'productPages/warriorsPage.php'),
+(21, 'LA008', 'Camiseta NBA USA Squad', 'M', 10, '199.99', '2023-06-15 10:29:54', 18, 'productPages/usaSquadPage.php'),
+(22, 'LA009', 'Camiseta NBA Utah Jazz', 'GG', 10, '199.99', '2023-06-15 10:33:53', 19, 'productPages/utahPage.php');
 
 -- --------------------------------------------------------
 
@@ -82,7 +84,21 @@ INSERT INTO `carrinho` (`idPedido`, `FKcadastroProduto`, `codProd`, `productName
 (7, 18, 'LA006', 'Camiseta NBA Los Angeles Lakers', 'amarelo', 1, 'G', '2023-06-10 15:50:44'),
 (8, 18, 'LA006', 'Camiseta NBA Los Angeles Lakers', 'amarelo', 1, 'G', '2023-06-10 15:51:17'),
 (9, 18, 'LA006', 'Camiseta NBA Los Angeles Lakers', 'amarelo', 1, 'M', '2023-06-10 15:52:05'),
-(10, 18, 'LA006', 'Camiseta NBA Los Angeles Lakers', '', 1, 'XGG', '2023-06-10 15:52:21');
+(10, 18, 'LA006', 'Camiseta NBA Los Angeles Lakers', '', 1, 'XGG', '2023-06-10 15:52:21'),
+(11, 18, 'LA006', 'Camiseta NBA Los Angeles Lakers', '', 1, '', '2023-06-15 09:57:39'),
+(12, 13, 'LA001', 'Camiseta NBA Boston Celtics', '', 1, '', '2023-06-15 10:03:43'),
+(13, 13, 'LA001', 'Camiseta NBA Boston Celtics', 'branco', 2, 'G', '2023-06-15 10:07:02'),
+(14, 14, 'LA002', 'Camiseta NBA Bulls Jordan', 'branco', 5, 'XGG', '2023-06-15 10:09:24'),
+(15, 15, 'LA003', 'Camiseta NBA Los Angeles Clippers', '', 4, 'G', '2023-06-15 10:11:54'),
+(16, 15, 'LA003', 'Camiseta NBA Los Angeles Clippers', '', 1, 'GG', '2023-06-15 10:12:10'),
+(17, 15, 'LA003', 'Camiseta NBA Los Angeles Clippers', '', 3, 'G', '2023-06-15 10:14:46'),
+(18, 15, 'LA003', 'Camiseta NBA Los Angeles Clippers', 'AzulClaro', 1, 'G', '2023-06-15 10:16:07'),
+(19, 16, 'LA004', 'Camiseta NBA Milwaukee Bucks', 'Preto', 2, 'M', '2023-06-15 10:21:16'),
+(20, 17, 'LA005', 'Camiseta NBA Miami Heat', 'on', 2, 'GG', '2023-06-15 10:23:19'),
+(21, 17, 'LA005', 'Camiseta NBA Miami Heat', 'Rosa-bebe', 5, 'G', '2023-06-15 10:24:14'),
+(22, 19, 'LA007', 'Camiseta NBA Golden State Warriors', 'Azul', 3, 'XGG', '2023-06-15 10:26:57'),
+(23, 21, 'LA008', 'Camiseta NBA USA Squad', 'Azul', 1, 'GG', '2023-06-15 10:31:08'),
+(24, 22, 'LA009', 'Camiseta NBA Utah Jazz', 'Azul', 3, 'GG', '2023-06-15 10:36:53');
 
 -- --------------------------------------------------------
 
@@ -106,7 +122,9 @@ INSERT INTO `imagem` (`id_img`, `path`) VALUES
 (13, '../files/64848c9d0d623.png'),
 (14, '../files/64848d7ddd931.png'),
 (15, '../files/64848f1db626f.png'),
-(16, '../files/648490dfb48c2.png');
+(16, '../files/648490dfb48c2.png'),
+(18, '../files/648b11f6869f8.png'),
+(19, '../files/648b131258386.png');
 
 --
 -- Índices para tabelas despejadas
@@ -140,19 +158,19 @@ ALTER TABLE `imagem`
 -- AUTO_INCREMENT de tabela `cadastroproduto`
 --
 ALTER TABLE `cadastroproduto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT de tabela `carrinho`
 --
 ALTER TABLE `carrinho`
-  MODIFY `idPedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `idPedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de tabela `imagem`
 --
 ALTER TABLE `imagem`
-  MODIFY `id_img` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_img` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- Restrições para despejos de tabelas
