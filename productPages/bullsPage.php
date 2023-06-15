@@ -39,33 +39,44 @@
         <img src="../img/bullsJordan (2).png " alt="mainImg" id="mainImg" />
       </section>
       <section class="sales-section">
-        <form action="" method="POST" class="productinfo">
-          <h2>Camiseta NBA Bulls Jordan</h2>
-          <p>Cod: LA002</p>
+      <form
+          action="../DbConnection/processoCarrinho.php"
+          method="POST"
+          class="productinfo"
+          onsubmit="updateCodProdValue()"
+        >
+        <input type="hidden" name="productname" value="Camiseta NBA Bulls Jordan">
+        <input type="hidden" name="codProd" id="codProdValue">
+        <h2>Camiseta NBA Bulls Jordan</h2>
+        <p id="codProd">Cod: LA002</p>
           <p>Escolha a <span>COR</span> :</p>
-          <input type="color" id="color" name="color" value="#FFFFFF" disabled />
-          <input type="radio" name="white" id="white" />
-          <label for="white">Branco</label>
+          <input type="color" id="color" name="branco" value="#ffffff" disabled/>
+          <input type="radio" name="color" id="branco" value="branco"/>
+          <label for="branco">Branco</label>
           <div class="btnQtd">
-            <label for="contador">Quantidade:</label><br>
+            <label for="contador">Quantidade:</label><br />
             <button type="button" id="btnDiminuir">-</button>
-            <input type="number" id="contador" value="1" readonly>
+            <input
+              type="number"
+              id="contador"
+              name="quantidade"
+              value="1"
+              readonly
+            />
             <button type="button" id="btnAumentar">+</button>
           </div>
           <p>Escolha o <span>TAMANHO</span> :</p>
-          <input type="radio" name="sizebtn" id="P" />
+          <input type="radio" name="sizebtn" id="P" value="P" />
           <label for="P">P</label>
-          <input type="radio" name="sizebtn" id="M" />
+          <input type="radio" name="sizebtn" id="M" value="M" />
           <label for="M">M</label>
-          <input type="radio" name="sizebtn" id="G" />
+          <input type="radio" name="sizebtn" id="G" value="G" />
           <label for="G">G</label>
-          <input type="radio" name="sizebtn" id="GG" />
+          <input type="radio" name="sizebtn" id="GG" value="GG" />
           <label for="GG">GG</label>
-          <input type="radio" name="sizebtn" id="XGG" />
+          <input type="radio" name="sizebtn" id="XGG" value="XGG" />
           <label for="XGG">XGG</label>
-          <button onClick="window.location.href='carrinho.php'" class="prodBtn">
-            COMPRAR
-          </button><br />
+          <button type="submit" class="prodBtn">Add no carrinho</button><br />
           <label for="cep">Digite seu CEP:</label><br />
           <input type="text" class="cepBar" />
           <button class="navBtn">Calcular</button>
