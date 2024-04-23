@@ -32,6 +32,4 @@ $ cd ProjetoNBA
 
 ---
 
-by Juscelino Mamede 🎸
 
-JOHN 14:6 ✟
